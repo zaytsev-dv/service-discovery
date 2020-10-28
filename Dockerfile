@@ -5,7 +5,7 @@ COPY . .
 RUN mvn clean install
 
 FROM java:8-jre-alpine
-COPY --from=builder /src/web/target/service-discovery.jar /service-discovery.jar
+COPY --from=builder /src/target/service-discovery.jar /service-discovery.jar
 ENTRYPOINT ["java","-jar","service-discovery.jar"]
 
 
